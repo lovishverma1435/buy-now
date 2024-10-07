@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- First Swiper -->
+    <div>
+      <button id="backBtn1">Back</button>
+      <button id="forwardBtn1">Forward</button>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+    </div>
+
+    <!-- Second Swiper -->
+    <div>
+      <button id="backBtn2">Back</button>
+      <button id="forwardBtn2">Forward</button>
+    </div>
+    <div class="swiper mySwiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper1 = new Swiper(".mySwiper", {
+        navigation: false,
+        autoplay: {
+          delay: 30,
+          disableOnInteraction: false,
+        },
+      });
+      var swiper2 = new Swiper(".mySwiper1", {
+        navigation: false,
+        autoplay: {
+          delay: 30,
+          disableOnInteraction: false,
+        },
+      });
+
+      document
+        .getElementById("backBtn1")
+        .addEventListener("click", function () {
+          swiper1.slidePrev();
+        });
+
+      document
+        .getElementById("forwardBtn1")
+        .addEventListener("click", function () {
+          swiper1.slideNext();
+        });
+
+      document
+        .getElementById("backBtn2")
+        .addEventListener("click", function () {
+          swiper2.slidePrev();
+        });
+
+      document
+        .getElementById("forwardBtn2")
+        .addEventListener("click", function () {
+          swiper2.slideNext();
+        });
+    </script>
+  </body>
+</html>
